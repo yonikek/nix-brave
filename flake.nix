@@ -24,6 +24,10 @@
           inherit (bravePackages) brave brave-origin;
         };
 
+      nixosModules = {
+        bravePolicies = import ./modules/brave-policies.nix;
+      };
+
       packages = forAllSystems (system:
         let
           pkgs = import nixpkgs {
