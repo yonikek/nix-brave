@@ -1,0 +1,29 @@
+name: Update Brave versions
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update versions and hashes
+        run: python3 ./pkgs/brave/update.py
+      - name: Create update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automated/brave-update
+          delete-branch: true
+          commit-message: "brave: update upstream versions and hashes"
+          title: "brave: update upstream versions and hashes"
+          body: |
+            Automated update using the upstream Brave version metadata and SHA-256 files.
+
+            Please review the upstream release notes and verify the builds before merging.

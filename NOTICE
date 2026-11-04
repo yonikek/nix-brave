@@ -1,0 +1,7 @@
+The Nix packaging expressions in pkgs/brave/ are based on the Nixpkgs
+Brave package directory:
+https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/applications/networking/browsers/brave
+
+The Brave Browser and Brave Origin binaries are not included in this
+repository. They are fetched from Brave's official release URLs at build time.
+Brave's binaries and trademarks are subject to Brave's own terms and licenses.
