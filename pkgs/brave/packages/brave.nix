@@ -2,6 +2,7 @@
 rec {
   pname = "brave";
   version = "1.98.63";
+
   archives = {
     aarch64-linux = {
       url = "https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_arm64.deb";
