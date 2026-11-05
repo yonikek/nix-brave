@@ -3,6 +3,7 @@ rec {
   pname = "brave-origin";
   version = "1.98.63";
   flavor = "origin";
+
   archives = {
     aarch64-linux = {
       url = "https://github.com/brave/brave-browser/releases/download/v${version}/brave-origin_${version}_arm64.deb";
